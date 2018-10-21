@@ -6,7 +6,7 @@
     "title": "The Root Schema",
     "required": [
       "id",
-      "title"
+      "contract status"
     ],
     "properties": {
       "id": {
@@ -17,9 +17,9 @@
           1
         ]
       },
-      "title": {
+      "contract status": {
         "type": "string",
-        "title": "The Title Schema",
+        "title": "The Contract Status Schema",
         "default": "",
         "examples": [
           "test"
