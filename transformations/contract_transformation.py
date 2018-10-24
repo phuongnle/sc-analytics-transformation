@@ -9,7 +9,7 @@ def hashkey_to_bytes_array(hashkey):
 def transform(entity, msg_context):
     contract_key = str(entity['id']) + '|' + str(msg_context['source'])
     contract_hashkey = get_hashkey(contract_key)
-    entity['hashKey'] = hashkey_to_bytes_array(contract_hashkey)
+    entity['contractHashkey'] = hashkey_to_bytes_array(contract_hashkey)
 
     link_client_contract_key = str(contract_hashkey.hexdigest()) + '|' + '|' + str(msg_context['source'])
     link_client_contract_hashkey = get_hashkey(link_client_contract_key)
