@@ -30,4 +30,14 @@ def transform(entity, msg_context):
         str(entity['notes']) + '|' + str(entity['phone number']) + '|' + str(entity['organisation type'])
     entity['organisationRowHash'] = hash_object_to_bytes_array(get_hash(organisation_row_key))
 
+    organisation_address_row_key = \
+        str(organisation_hashkey) + '|' + str(msg_context['source']) + '|' + \
+        str(entity['business address line 1']) + '|' + str(entity['business address line 2']) + '|' + str(entity['business address line 3']) + '|' + \
+        str(entity['business suburb']) + '|' +  str(entity['business postcode']) + '|' + str(entity['business city']) + '|' + \
+        str(entity['business state/region']) + '|' +  str(entity['business country']) + '|' + \
+        str(entity['postal address line 1']) + '|' + str(entity['postal address line 2']) + '|' + \
+        str(entity['postal address line 3']) + '|' + str(entity['postal suburb']) + '|' + str(entity['postal postcode']) + '|' + \
+        str(entity['postal city']) + '|' + str(entity['postal state/region']) + '|' + str(entity['postal country'])
+    entity['organisationAddressRowHash'] = hash_object_to_bytes_array(get_hash(organisation_address_row_key))
+
     return entity
