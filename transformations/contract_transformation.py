@@ -7,6 +7,9 @@ def get_hash(key):
 def hash_object_to_bytes_array(hashkey):
     return list(hashkey.digest())
 
+def get_property_string(entity, property):
+    return str(entity[property]) if property in entity else ''
+
 def get_organisation_hashKey(organisation_id, sql_helper):
     if organisation_id is None:
         return None
@@ -14,11 +17,11 @@ def get_organisation_hashKey(organisation_id, sql_helper):
     return sql_helper.fetch_value(query, organisation_id)
 
 def transform(entity, msg_context, sql_helper):
-    contract_key = str(entity['id']) + '|' + str(msg_context['source'])
+    contract_key = get_property_string(entity, 'id') + '|' + str(msg_context['source'])
     contract_hashkey = get_hash(contract_key)
     entity['contractHashkey'] = hash_object_to_bytes_array(contract_hashkey)
 
-    version_key = str(contract_hashkey) + '|' + str(entity['version'])
+    version_key = str(contract_hashkey) + '|' + get_property_string(entity, 'version')
     version_hash = get_hash(version_key)
     entity['rowHash'] = hash_object_to_bytes_array(version_hash)
 
