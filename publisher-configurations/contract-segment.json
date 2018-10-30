@@ -1,0 +1,64 @@
+{
+    "hub-contract-segment": {
+        "schema": "Data Vault",
+        "tableName": "Hub Contract Segment",
+        "primaryKeyColumnNames": ["Contract Segment HashKey"],
+        "effectiveDateTimeColumnName": "Load TimeStamp",
+        "sourceColumnName": "Record Source Name",
+        "columns": [
+            {"name": "Contract Segment HashKey", "dbType" : "VarBinary"}
+        ],
+        "tableColumnToEntityFieldMap": {
+            "Contract Segment HashKey": "contractSegmentHashkey",
+            "Contract Segment ID": "id",
+            "Load CorrID": "correlationId"
+        }
+    },
+    "satellite-contract-segment": {
+        "schema": "Data Vault",
+        "tableName": "Satellite Progenitor Contract Segment",
+        "primaryKeyColumnNames": ["Contract Segment HashKey", "Progenitor Contract Segment Load TimeStamp"],
+        "effectiveDateTimeColumnName": "Progenitor Contract Segment Load TimeStamp",
+        "sourceColumnName": "Record Source Name",
+        "columns": [
+            {"name": "Contract Segment HashKey", "dbType": "VarBinary"},
+            {"name": "Progenitor Contract Segment Load TimeStamp", "dbType": "DateTime2"}
+        ],
+        "tableColumnToEntityFieldMap": {
+            "Contract Segment HashKey": "contractSegmentHashkey",
+            "Load CorrID": "correlationId",
+            "ID": "id",
+            "Item URL": "item url",
+            "Title": "title",
+            "Retired": "retired",
+            "Deleted": "deleted",
+            "Value (ex Tax)": "value (ex tax)",
+            "Value (Tax)": "value (tax)",
+            "Original Value (ex Tax)": "original value (ex tax)",
+            "Original Value (Tax)": "original value (tax)",
+            "Start Date": "start date",
+            "End Date": "end date",
+            "Segment Number": " ",
+            "Expenditure (ex Tax)": "expenditure (ex tax)",
+            "Expenditure (Tax)": "expendite (tax)"
+        }
+    },
+    "satellite-contract-segment-version": {
+        "schema": "Data Vault",
+        "tableName": "Satellite Progenitor Contract Segment Version",
+        "primaryKeyColumnNames": ["Contract Segment HashKey", "Progenitor Contract Segment Version Load TimeStamp"],
+        "effectiveDateTimeColumnName": "Progenitor Contract Segment Version Load TimeStamp",
+        "sourceColumnName": "Record Source Name",
+        "columns": [
+            {"name": "Contract Segment HashKey", "dbType": "VarBinary"},
+            {"name": "Row Hash", "dbType": "VarBinary"},
+            {"name": "Progenitor Contract Segment Load TimeStamp", "dbType": "DateTime2" }
+        ],
+        "tableColumnToEntityFieldMap": {
+            "Contract Segment HashKey": "contractSegmentHashkey",
+            "Load CorrID": "correlationId",
+            "Row Hash": "rowHash",
+            "Version": "version"
+        }
+    }
+}

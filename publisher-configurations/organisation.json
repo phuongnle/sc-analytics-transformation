@@ -1,0 +1,118 @@
+{
+    "hub-organisation": {
+        "schema": "Data Vault",
+        "tableName": "Hub Organisation",
+        "primaryKeyColumnNames": ["Organisation HashKey"],
+        "effectiveDateTimeColumnName": "Load TimeStamp",
+        "sourceColumnName": "Record Source Name",
+        "columns": [
+            {"name": "Organisation HashKey", "dbType" : "VarBinary"}
+        ],
+        "tableColumnToEntityFieldMap": {
+            "Organisation HashKey": "organisationHashkey",
+            "Organisation ID": "id",
+            "Load CorrID": "correlationId"
+        }
+    },
+    "satellite-organisation": {
+        "schema": "Data Vault",
+        "tableName": "Satellite Progenitor Organisation",
+        "primaryKeyColumnNames": ["Organisation HashKey", "Progenitor Organisation Load TimeStamp"],
+        "effectiveDateTimeColumnName": "Progenitor Organisation Load TimeStamp",
+        "sourceColumnName": "Record Source Name",
+        "columns": [
+            {"name": "Organisation HashKey", "dbType": "VarBinary"},
+            {"name": "Row Hash", "dbType": "VarBinary"},
+            {"name": "Progenitor Organisation Load TimeStamp", "dbType": "DateTime2"}
+        ],
+        "tableColumnToEntityFieldMap": {
+            "Organisation HashKey": "organisationHashkey",
+            "Load CorrID": "correlationId",
+            "Row Hash": "organisationRowHash",
+            "ID": "id",
+            "Item URL": "item url",
+            "Registered Name": "registered name",
+            "Retired": "retired",
+            "Deleted": "deleted",
+            "Previous Registered Name": "previous registered name",
+            "Trading Name": "trading name",
+            "Previous Trading Name": "previous trading name",
+            "Organisation Number": "organisation number",
+            "Business Number": "business number",
+            "Business Number Registration Date": "business number registration date",
+            "Company Number": "company number",
+            "Date of Incorporation": "date of incorporation",
+            "Registered for GST": "registered for gst",
+            "Indigenous Owned Entity": "indigenous owned entity",
+            "Disability Employment Organisation": "disability employment organisation",
+            "ERP ID": "erp id",
+            "Organisation Website": "organisation website",
+            "Organisation Email": "organisation email",
+            "Organisation Fax": "organisation fax",
+            "Business Address Line 1": "business address line 1",
+            "Business Address Line 2": "business address line 2",
+            "Business Address Line 3": "business address line 3",
+            "Business Suburb": "business suburb",
+            "Business Postcode": "business postcode",
+            "Postal Address Line 1": "postal address line 1",
+            "Postal Address Line 2": "postal address line 2",
+            "Postal Address Line 3": "postal address line 3",
+            "Postal Suburb": "postal suburb",
+            "Postal Postcode": "postal postcode",
+            "Notes": "notes",
+            "Phone Number": "phone number",
+            "Organisation Type": "organisation type"
+        }
+    },
+    "satellite-organisation-version": {
+        "schema": "Data Vault",
+        "tableName": "Satellite Progenitor Organisation Version",
+        "primaryKeyColumnNames": ["Organisation HashKey", "Progenitor Organisation Version Load TimeStamp"],
+        "effectiveDateTimeColumnName": "Progenitor Organisation Version Load TimeStamp",
+        "sourceColumnName": "Record Source Name",
+        "columns": [
+            {"name": "Organisation HashKey", "dbType": "VarBinary"},
+            {"name": "Row Hash", "dbType": "VarBinary"},
+            {"name": "Progenitor Organisation Version Load TimeStamp", "dbType": "DateTime2"}
+        ],
+        "tableColumnToEntityFieldMap": {
+            "Organisation HashKey": "organisationHashkey",
+            "Load CorrID": "correlationId",
+            "Row Hash": "versionRowHash",
+            "Version": "version"
+        }
+    },
+    "satellite-organisation-addresses": {
+        "schema": "Data Vault",
+        "tableName": "Satellite Progenitor Organisation Addresses",
+        "primaryKeyColumnNames": ["Organisation HashKey", "Progenitor Organisation Addresses Load TimeStamp"],
+        "effectiveDateTimeColumnName": "Progenitor Organisation Addresses Load TimeStamp",
+        "sourceColumnName": "Record Source Name",
+        "columns": [
+            {"name": "Organisation HashKey", "dbType": "VarBinary"},
+            {"name": "Row Hash", "dbType": "VarBinary"},
+            {"name": "Progenitor Organisation Addresses Load TimeStamp", "dbType": "DateTime2"}
+        ],
+        "tableColumnToEntityFieldMap": {
+            "Organisation HashKey": "organisationHashkey",
+            "Load CorrID": "correlationId",
+            "Row Hash": "organisationAddressRowHash",
+            "Business Address Line 1": "business address line 1",
+            "Business Address Line 2": "business address line 2",
+            "Business Address Line 3": "business address line 3",
+            "Business Suburb": "business suburb",
+            "Business Postcode": "business postcode",
+            "Business City": "business city",
+            "Business State/Region": "business state/region",
+            "Business Country": "business country",
+            "Postal Address Line 1": "postal address line 1",
+            "Postal Address Line 2": "postal address line 2",
+            "Postal Address Line 3": "postal address line 3",
+            "Postal Suburb": "postal suburb",
+            "Postal Postcode": "postal postcode",
+            "Postal City": "postal city",
+            "Postal State/Region": "postal state/region",
+            "Postal Country": "postal country"
+        }
+    }
+}

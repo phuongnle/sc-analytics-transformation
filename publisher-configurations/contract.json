@@ -1,0 +1,104 @@
+{
+    "hub-contract": {
+        "schema": "Data Vault",
+        "tableName": "Hub Contract",
+        "primaryKeyColumnNames": ["Contract HashKey"],
+        "effectiveDateTimeColumnName": "Load TimeStamp",
+        "sourceColumnName": "Record Source Name",
+        "columns": [
+            {"name": "Contract HashKey", "dbType" : "VarBinary"}
+        ],
+        "tableColumnToEntityFieldMap": {
+            "Contract HashKey": "contractHashkey",
+            "Contract ID": "id",
+            "Load CorrID": "correlationId"
+        }
+    },
+    "link-client-contract": {
+        "schema": "Data Vault",
+        "tableName": "Link Client of Contract",
+        "primaryKeyColumnNames": ["Client of Contract Hashkey"],
+        "effectiveDateTimeColumnName": "Client of Contract Load TimeStamp",
+        "sourceColumnName": "Record Source Name",
+        "columns": [
+            {"name": "Contract HashKey", "dbType": "VarBinary"},
+            {"name": "Client of Contract Hashkey", "dbType": "VarBinary"}
+        ],
+        "tableColumnToEntityFieldMap": {
+            "Contract HashKey": "contractHashkey",
+            "Load CorrID": "correlationId",
+            "Client of Contract Hashkey": "linkClientContractHashkey"
+        }
+    },
+    "link-supplier-contract": {
+        "schema": "Data Vault",
+        "tableName": "Link Supplier of Contract",
+        "primaryKeyColumnNames": ["Supplier of Contract Hashkey"],
+        "effectiveDateTimeColumnName": "Supplier of Contract Load TimeStamp",
+        "sourceColumnName": "Record Source Name",
+        "columns": [
+            {"name": "Contract HashKey", "dbType": "VarBinary"},
+            {"name": "Supplier of Contract Hashkey", "dbType" : "VarBinary"},
+            {"name": "Organisation HashKey", "dbType": "VarBinary"}
+        ],
+        "tableColumnToEntityFieldMap": {
+            "Contract HashKey": "contractHashkey",
+            "Load CorrID": "correlationId",
+            "Supplier of Contract Hashkey": "linkSupplierContractHashkey",
+            "Organisation HashKey": "supplierHashKey"
+        }
+    },
+    "satellite-contract": {
+        "schema": "Data Vault",
+        "tableName": "Satellite Progenitor Contract",
+        "primaryKeyColumnNames": ["Contract HashKey", "Progenitor Contract Load TimeStamp"],
+        "effectiveDateTimeColumnName": "Progenitor Contract Load TimeStamp",
+        "sourceColumnName": "Record Source Name",
+        "columns": [
+            {"name": "Contract HashKey", "dbType": "VarBinary"},
+            {"name": "Progenitor Contract Load TimeStamp", "dbType": "DateTime2"}
+        ],
+        "tableColumnToEntityFieldMap": {
+            "Contract HashKey": "contractHashkey",
+            "Load CorrID": "correlationId",
+            "ID": "id",
+            "Item URL": "item url",
+            "Contract Title": "contract title",
+            "Contract Number": "contract number",
+            "Contract Description": "contract description",
+            "Retired": "retired",
+            "Deleted": "deleted",
+            "Status Id": "status id",
+            "Income Type Id": "income type id",
+            "Contract Type Id": "contract type id",
+            "Value (ex. Tax)": "value (ex. tax)",
+            "Value (Tax)": "value (tax)",
+            "Contract Start Date": "contract start date",
+            "Contract End Date": "contract end date",
+            "Record Management / Directory Reference": "record management / directory reference",
+            "Original Contract Period (Weeks)": "original contract period (weeks)",
+            "Contract Notes": "contract notes",
+            "Original Contract Completion Date": "original contract completion date",
+            "Original Contract Date": "original contract date",
+            "Original Contract Start Date": "original contract start date"
+        }
+    },
+    "satellite contract version": {
+        "schema": "Data Vault",
+        "tableName": "Satellite Progenitor Contract Version",
+        "primaryKeyColumnNames": ["Contract HashKey", "Progenitor Contract Version Load TimeStamp"],
+        "effectiveDateTimeColumnName": "Progenitor Contract Version Load TimeStamp",
+        "sourceColumnName": "Record Source Name",
+        "columns": [
+            {"name": "Contract HashKey", "dbType": "VarBinary"},
+            {"name": "Row Hash", "dbType": "VarBinary"},
+            {"name": "Progenitor Contract Version Load TimeStamp", "dbType": "DateTime2"}
+        ],
+        "tableColumnToEntityFieldMap": {
+            "Contract HashKey": "contractHashkey",
+            "Load CorrID": "correlationId",
+            "Row Hash": "rowHash",
+            "Version": "version"
+        }
+    }
+}
