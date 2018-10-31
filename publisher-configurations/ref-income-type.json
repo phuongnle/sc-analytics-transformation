@@ -1,0 +1,14 @@
+{
+    "ref-income-type": {
+        "schema": "Data Vault",
+        "tableName": "Ref Progenitor Income Type",
+        "primaryKeyColumnNames": ["Progenitor Income Type Id"],
+        "effectiveDateTimeColumnName": "Progenitor Income Type Load TimeStamp",
+        "sourceColumnName": "Record Source Name",
+        "tableColumnToEntityFieldMap": {
+            "Progenitor Income Type Id": "id",
+            "Load CorrID": "correlationId",
+            "Income Type": "income type"
+        }
+    }
+}

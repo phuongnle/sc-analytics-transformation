@@ -1,0 +1,14 @@
+{
+    "ref-contract-status": {
+        "schema": "Data Vault",
+        "tableName": "Ref Progenitor Contract Status",
+        "primaryKeyColumnNames": ["Progenitor Contract Status Id"],
+        "effectiveDateTimeColumnName": "Progenitor Contract Status Load TimeStamp",
+        "sourceColumnName": "Record Source Name",
+        "tableColumnToEntityFieldMap": {
+            "Progenitor Contract Status Id": "id",
+            "Load CorrID": "correlationId",
+            "Contract Status": "contract status"
+        }
+    }
+}
